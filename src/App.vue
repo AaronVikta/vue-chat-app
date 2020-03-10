@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-
+    <connection-status :isConnected="isConnected"/>
   </div>
 </template>
 
@@ -9,7 +9,19 @@
 export default {
   name: 'App',
   components: {
-
+  },
+  data(){
+    return{
+      isConnected:false
+    }
+  },
+  sockets:{
+    connect: function(){
+      this.isConnected=true;
+    },
+    disconnect: function(){
+      this.isConnected=false;
+    }
   }
 }
 </script>
