@@ -10,7 +10,7 @@
           <textarea name="message" v-model="message">
           </textarea>
       </div>
-      <button type="submit">Send</button>
+      <input type="submit" value="Send">
     </form>
   </div>
 </template>
@@ -21,6 +21,14 @@ export default {
     return{
       username:"",
       message:""
+    }
+  },
+  methods:{
+    sendMessage() {
+      this.$socket.emit('chatMessage',{
+        username:this.username,
+        message:this.message
+      });
     }
   }
 }

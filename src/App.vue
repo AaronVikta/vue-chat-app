@@ -3,7 +3,7 @@
     <navigation-bar/>
     <div class="container">
       <message-list :messages="messages"/>
-      <message-form/>
+      <MessageForm/>
     </div>
     <connection-status :isConnected="isConnected"/>
   </div>
@@ -46,6 +46,9 @@ export default {
     },
     disconnect: function(){
       this.isConnected=false;
+    },
+    chatMessage(messages){
+      this.messages=messages
     }
   }
 }

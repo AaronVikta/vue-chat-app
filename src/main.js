@@ -10,7 +10,7 @@ import Navbar from './components/Navbar.vue'
 
 Vue.config.productionTip = false
 
-export const Socket=SocketIo(`http://localhost:3000`)
+export const Socket = SocketIo(`http://localhost:3000`)
 
 Vue.component('connection-status',ConnectionStatus);
 Vue.component('navigation-bar',Navbar);
